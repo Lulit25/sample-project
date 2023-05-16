@@ -1,0 +1,14 @@
+ #root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align:justify;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0
+}
+ul li{
+  margin-bottom: 10px;
+} 
