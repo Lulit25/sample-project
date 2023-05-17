@@ -35,6 +35,8 @@ cd Backend
 npm install
 npm start
 
+Runs on http://localhost:4000/
+
 To run test for backend
 
 npm test
@@ -46,6 +48,8 @@ To run frontend application:
 cd Frontend/SampleProject
 npm install
 vite dev
+
+Navigate to the url provided
 ```
 ### [Backend](#backend)
 
