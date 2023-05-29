@@ -5,20 +5,28 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.5",
+    "@graphql-codegen/cli": "^4.0.0",
+    "@graphql-codegen/typescript": "^4.0.0",
+    "@graphql-codegen/typescript-operations": "^4.0.0",
+    "@graphql-codegen/typescript-resolvers": "^4.0.0",
     "@types/jest": "^29.5.1",
+    "graphql-codegen": "^0.4.0",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "ts-jest": "^29.1.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+    "ts-node": "^10.9.1"
   },
   "dependencies": {
     "@apollo/client": "^3.7.14",
     "@types/express": "^4.17.17",
-    "@types/graphql": "^14.5.0",
     "@types/node": "^20.1.4",
     "apollo-server": "^3.12.0",
+    "class-validator": "^0.14.0",
     "express": "^4.18.2",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "mysql2": "^3.3.2",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.31.1",
+    "type-graphql": "^2.0.0-beta.2"
   }
 }

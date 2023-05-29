@@ -2,21 +2,6 @@
 
 This is a project forked form blencorp/sample-project.
 It is an Application built using Node js, react and GraphQL
-### [Backend](#backend)
-
-  - Node js application using GraphQL Apollo server
-  - Uses Typescript
-  - Uses sample data stored in json file
-  - Unit test included 
-
-### [Frontend](#frontend)
-
-  - React application created using vite
-  - Uses Typescript
-  - Fetch data from backened using Apollo client
-  - Uses Redux to manage state
-  - Displays list of clients in a table and client detail when Name of client clicked
-  - Uses Tailwind css for styling
 
 ## Getting Started
 
@@ -35,7 +20,11 @@ cd Backend
 npm install
 npm start
 
+insert sample data to database table(query in migration file)
+
 Runs on http://localhost:4000/
+
+
 
 To run test for backend
 
@@ -45,7 +34,7 @@ npm test
 To run frontend application:
 
 ```shell
-cd Frontend/SampleProject
+cd Frontend
 npm install
 vite dev
 
@@ -55,8 +44,10 @@ Navigate to the url provided
 
   - Node js application using GraphQl Apollo server
   - Uses Typescript
-  - Uses smple data store in json file
-  - Unit test included 
+  - Uses mysql database to store data
+  - Uses sequelize and TypeGraphQL
+  - Unit test included using jest
+  - Database migration for database models
 
 ### [Frontend](#frontend)
 

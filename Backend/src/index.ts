@@ -1,12 +1,21 @@
-import { ApolloServer, gql } from 'apollo-server';
-import { typeDefs } from './schema';
-import { resolvers } from './resolvers';
+import "reflect-metadata";
+import { ApolloServer } from 'apollo-server';
+import { buildSchema } from "type-graphql";
+import { ClientResolver } from "./resolvers";
+import { sequelize } from "./database";
 
-const server = new ApolloServer({
-  typeDefs,
-  resolvers,
-});
+async function startApolloServer() {
+  const schema = await buildSchema({
+    resolvers: [ClientResolver],
+  });
 
-server.listen().then(({ url }) => {
-  console.log(`Server ready at ${url}`);
-});
+  const server = new ApolloServer({ schema });
+
+  await sequelize.sync();
+
+  server.listen().then(({ url }) => {
+    console.log(`Server ready at ${url}`);
+  });
+}
+
+startApolloServer();
