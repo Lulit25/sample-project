@@ -65,7 +65,7 @@ function ClientListing() {
                                     {
                                         clients.map(client => (
 
-                                            <tr className="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700" key={client.id} >
+                                            <tr className="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700"  key={client.id} data-testid="client-item" >
                                                 <td className="whitespace-nowrap px-6 py-4 font-medium">{client.id}</td>
                                                 <td className="whitespace-nowrap px-6 py-4 font-medium" onClick={() => handleClick(client.id)}><Link to={`/client/${client.id}`}>{client.name}</Link></td>
                                                 <td className="whitespace-nowrap px-6 py-4 font-medium">{client.age}</td>

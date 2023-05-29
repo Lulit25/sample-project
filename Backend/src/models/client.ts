@@ -40,7 +40,7 @@ class ClientModel extends Model {
     },
     {
       sequelize,
-      tableName: "client5",
+      tableName: "clients",
     }
   );
 
