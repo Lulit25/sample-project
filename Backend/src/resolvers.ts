@@ -1,20 +1,29 @@
-import { readFileSync } from 'fs';
-import { join } from 'path';
-import { Client } from './types';
+import { Query, Resolver, Arg } from "type-graphql";
+import ClientModel from "./models/client";
+import { Client } from "./schema";
 
-const dataPath = join(__dirname, 'data.json');
-const data = readFileSync(dataPath, 'utf8');
-const jsonData = JSON.parse(data);
+@Resolver()
+export class ClientResolver {
+  @Query(() => Client, { nullable: true })
+  async client(@Arg("id") id: string): Promise<ClientModel | null> {
+    try {
+      const client = await ClientModel.findByPk(id);
+      return client;
+    } catch (error) {
+      console.error(`Error fetching client with ID ${id}:`, error);
+      throw error;
+    }
+  }
 
-export const resolvers = {
-    Query: {
-        client: (_: any, { id }: { id: string }): Client | undefined => {
-            return jsonData.clients.find((client:Client) => client.id === id);
-          },
-      clients: () => {
-       
-        return jsonData.clients;
-      },
-    },
-  };
+  @Query(() => [Client])
+  async clients(): Promise<ClientModel[]> {
+    try {
+      const clients = await ClientModel.findAll();
+      return clients;
+    } catch (error) {
+      console.error("Error fetching clients:", error);
+      throw error;
+    }
+  }
+}
 

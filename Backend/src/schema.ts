@@ -1,23 +1,36 @@
-import { gql } from 'apollo-server';
+import { ObjectType, Field } from "type-graphql";
 
-export const typeDefs = gql`
- type Client {
-    id: String!
-    age: Int!
-    name: String!
-    gender: String!
-    additionalInfo: AdditionalInfo!
-  }
+@ObjectType()
+export class AdditionalInfo {
+  @Field()
+  company!: string;
 
- type AdditionalInfo{
-    company: String!
-    email: String!
-    phone: String!
-    address: String!
-  }
+  @Field()
+  email!: string;
 
-  type Query {
-    client(id: String!) : Client
-    clients : [Client]
-  }
-`;
+  @Field()
+  phone!: string;
+
+  @Field()
+  address!: string;
+}
+
+@ObjectType()
+export class Client {
+  @Field()
+  id!: string;
+
+  @Field()
+  age!: number;
+
+  @Field()
+  name!: string;
+
+  @Field()
+  gender!: string;
+
+  @Field(() => AdditionalInfo)
+  additionalInfo!: AdditionalInfo;
+  
+
+}
